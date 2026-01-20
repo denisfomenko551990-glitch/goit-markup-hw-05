@@ -631,6 +631,10 @@ a {
   color: #4d5ae5;
 }
 
+.modal-field {
+  margin-bottom: 8px;
+}
+
 .modal-input-wrapped {
   position: relative;
 }
