@@ -182,14 +182,16 @@ a {
   margin: 0 auto 48px;
 }
 
-.hero-button {
+.hero-button,
+.modal-button {
   display: flex;
   justify-content: center;
   flex-direction: row;
   gap: 10px;
 }
 
-.hero-btn {
+.hero-btn,
+.modal-btn {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -208,11 +210,13 @@ a {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.hero-btn:hover {
+.hero-btn:hover,
+.modal-btn:hover {
   background-color: #404bbf;
 }
 
-.hero-btn:focus {
+.hero-btn:focus,
+.modal-btn:focus {
   background-color: #404bbf;
 }
 
@@ -531,6 +535,73 @@ a {
   fill: #f4f4fd;
 }
 
+.footer-subscribe {
+  width: 453px;
+  height: 80px;
+}
+
+.footer-user-email {
+  display: flex;
+  align-items: center;
+}
+
+.footer-input {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 264px;
+  height: 40px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  padding: 8px 16px;
+  outline: transparent;
+  background-color: transparent;
+  margin-right: 24px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-input:hover {
+  border-color: #31d0aa;
+}
+
+.footer-input::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.footer-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: 4px;
+  padding: 8px 24px;
+  width: 165px;
+  height: 40px;
+  background-color: #4d5ae5;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-button:hover {
+  background-color: #31d0aa;
+}
+
+.subscribe-icon {
+  fill: #fff;
+}
+
+/*---------------------modal-----------------*/
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -547,9 +618,9 @@ a {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background: #fcfcfc;
   position: absolute;
-  top: 80px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   padding: 72px 24px 24px 24px;
 }
 
@@ -565,6 +636,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close:hover {
@@ -590,30 +664,33 @@ a {
   margin-bottom: 16px;
 }
 
-.modal-label,
-.modal-label-checkbox {
+.modal-label {
   display: block;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  margin-bottom: 4px;
 }
 
 .modal-input,
 .modal-textarea {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 360px;
+  width: 100%;
   height: 40px;
   font-size: 18px;
   padding-left: 38px;
+  outline: transparent;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-textarea {
   height: 120px;
-  padding-left: 16px;
+  padding: 8px 16px;
+  resize: none;
 }
 
 .modal-textarea::placeholder {
@@ -624,11 +701,13 @@ a {
   color: rgba(46, 47, 66, 0.4);
 }
 
-.policy-link {
-  line-height: 1.33;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: #4d5ae5;
+.modal-input:focus,
+.modal-textarea:focus {
+  border-color: #4d5ae5;
+}
+
+.modal-input:focus+.modal-icon-input {
+  fill: #4d5ae5;
 }
 
 .modal-field {
@@ -637,6 +716,7 @@ a {
 
 .modal-input-wrapped {
   position: relative;
+  margin-top: 4px;
 }
 
 .modal-icon-input {
@@ -645,4 +725,39 @@ a {
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.modal-label-checkbox {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-check:checked+.modal-label-checkbox .check-icon {
+  background-color: #404bbf;
+  fill: #f4f4fd;
+}
+
+.policy-link {
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+}
+
+.check-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: transparent;
 }
