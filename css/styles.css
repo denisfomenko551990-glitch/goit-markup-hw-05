@@ -537,12 +537,12 @@ a {
 
 .footer-subscribe {
   width: 453px;
-  height: 80px;
+  margin-left: auto;
 }
 
-.footer-user-email {
+.footer-form {
   display: flex;
-  align-items: center;
+  gap: 24px;
 }
 
 .footer-input {
@@ -554,13 +554,16 @@ a {
   padding: 8px 16px;
   outline: transparent;
   background-color: transparent;
-  margin-right: 24px;
   transition-property: border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-input:hover {
+  border-color: #31d0aa;
+}
+
+.footer-input:focus {
   border-color: #31d0aa;
 }
 
@@ -579,7 +582,7 @@ a {
   gap: 16px;
   border-radius: 4px;
   padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
   font-weight: 500;
@@ -598,6 +601,10 @@ a {
   background-color: #31d0aa;
 }
 
+.footer-button:focus {
+  background-color: #31d0aa;
+}
+
 .subscribe-icon {
   fill: #fff;
 }
@@ -613,6 +620,7 @@ a {
   z-index: 999;
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
   transition-property: opacity;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -621,6 +629,7 @@ a {
 .modal-overlay.is-open {
   opacity: 1;
   pointer-events: auto;
+  visibility: hidden;
 }
 
 .modal {

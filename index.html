@@ -362,15 +362,16 @@
             </div>
             <div class="footer-subscribe">
                 <p class="footer-social-text">Subscribe</p>
-                <div class="footer-user-email">
-                    <label for="footer-input"></label>
-                    <input type="email" name="user-email" id="footer-input" class="footer-input" placeholder="E-mail">
-                    <button class="footer-button" type="button">
-                        Subscribe <svg width="24" height="20" class="subscribe-icon">
+                <form class="footer-form">
+                    <label for="footer-input" class="visually-hidden">user-email</label>
+                    <input type="email" name="user-email" id="footer-input" class="footer-input" placeholder="E-mail"
+                        required>
+                    <button class="footer-button" type="submit">
+                        Subscribe <svg width="24" height="24" class="subscribe-icon">
                             <use href="./images/icons.svg#icon-send"></use>
                         </svg>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     </footer>
